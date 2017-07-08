@@ -6,10 +6,13 @@
   tasks:
     - group_by: key={{ ansible_distribution }}
 
-- name: Install Ubuntu Packages
-  hosts: Ubuntu
+- name: Initial Setup
+  hosts: all
   become: True
   tasks:
+    - apt:
+      name: nano
+      state: present
     - script: /scripts/aesthetics.sh
     - script: /scripts/hipchat.sh
     - script: /scripts/skypye.sh
