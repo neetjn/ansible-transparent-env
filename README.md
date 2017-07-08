@@ -7,8 +7,13 @@ These plays will only suffice for Debian based distributions.
 
 # Installed software
 
-* Skype
-* HipChat
-* VSCode
-* AWS-Cli
-* Node.js
+* skypeforlinux
+* hipchat-4
+* vscode
+* aws-cli
+* node (+ n)
+* docker
+* docker-compose
+* nano
+* curl
+* httpie
