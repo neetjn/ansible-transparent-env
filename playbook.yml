@@ -1,19 +1,47 @@
 #!/usr/bin/env ansible-playbook
 
-- name: Gather prerequisites 
+- name: Gather prerequisites
   hosts: all
   gather_facts: True
   tasks:
     - group_by: key={{ ansible_distribution }}
 
 - name: Initial Setup
-  hosts: all
+  hosts: localhost
   become: True
   tasks:
-    - apt:
-      name: nano
-      state: present
-    - script: /scripts/aesthetics.sh
-    - script: /scripts/hipchat.sh
-    - script: /scripts/skypye.sh
-    - script: /scripts/vscode.sh
+
+    - name: Requirements
+      apt:
+        name: nano
+        state: present
+      apt:
+        name: python-pip
+        state: present
+      pip:
+        name: aws-cli
+      pip:
+        name: docker
+      pip:
+        name: docker-compose
+      when: ansible_os_family == "Debian"
+
+    - name: Asesthetics
+      script: scripts/aesthetics.sh
+      when: ansible_os_family == "Debian"
+
+    - name: Node.js
+      script: scripts/node.sh
+      when: ansible_os_family == "Debian"
+
+    - name: Skype
+      script: scripts/skype.sh
+      when: ansible_os_family == "Debian"
+
+    - name: Hipchat
+      script: scripts/hipchat.sh
+      when: ansible_os_family == "Debian"
+
+    - name: VSCode
+      script: scripts/vscode.sh
+      when: ansible_os_family == "Debian"
