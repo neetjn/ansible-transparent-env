@@ -18,10 +18,13 @@
       apt:
         name: python-pip
         state: present
+
+    - name: Requirements (ext)
       pip:
         name: aws-cli
       pip:
         name: docker
+        version: 2.4.5
       pip:
         name: docker-compose
       when: ansible_os_family == "Debian"
@@ -44,4 +47,9 @@
 
     - name: VSCode
       script: scripts/vscode.sh
+      when: ansible_os_family == "Debian"
+
+    - name: VSCode (Extensions)
+      script: scripts/vscode.extensions.sh
+      become: false
       when: ansible_os_family == "Debian"
