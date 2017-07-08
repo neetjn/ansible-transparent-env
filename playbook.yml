@@ -13,13 +13,21 @@
 
     - name: Requirements
       apt:
+        name: build-essential
+        state: present
+      apt:
         name: nano
+        state: present
+      apt:
+        name: curl
         state: present
       apt:
         name: python-pip
         state: present
 
     - name: Requirements (ext)
+      pip:
+        name: httpie
       pip:
         name: aws-cli
       pip:
