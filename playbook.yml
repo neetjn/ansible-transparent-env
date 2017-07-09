@@ -22,6 +22,9 @@
         name: redshift-gtk
         state: present
       apt:
+        name: plank
+        state: present
+      apt:
         name: curl
         state: present
       apt:
