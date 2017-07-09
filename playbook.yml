@@ -19,11 +19,15 @@
         name: nano
         state: present
       apt:
+        name: redshift-gtk
+        state: present
+      apt:
         name: curl
         state: present
       apt:
         name: python-pip
         state: present
+      when: ansible_os_family == "Debian"
 
     - name: Requirements (ext)
       pip:
