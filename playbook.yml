@@ -34,6 +34,8 @@
 
     - name: Requirements (ext)
       pip:
+        name: pylint
+      pip:
         name: httpie
       pip:
         name: aws-cli
