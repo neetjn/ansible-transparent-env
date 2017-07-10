@@ -14,6 +14,7 @@ These plays will only suffice for Debian based distributions.
 * node (+ n)
 * docker
 * docker-compose
+* pylint
 * nano
 * curl
 * httpie
