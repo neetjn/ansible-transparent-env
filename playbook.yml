@@ -11,37 +11,64 @@
   become: True
   tasks:
 
-    - name: Requirements
+    - name: Install build essentials for ubuntu
       apt:
         name: build-essential
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Intall nano terminal editor
       apt:
         name: nano
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install redshift with gui for blue light management
       apt:
         name: redshift-gtk
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install plank for app dock
       apt:
         name: plank
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install curl cli
       apt:
         name: curl
         state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install pip python package manager
       apt:
         name: python-pip
         state: present
       when: ansible_os_family == "Debian"
 
-    - name: Requirements (ext)
+    - name: Install pylint cli and tools
       pip:
         name: pylint
+      when: ansible_os_family == "Debian"
+
+    - name: Install httpie cli
       pip:
         name: httpie
+      when: ansible_os_family == "Debian"
+
+    - name: Install AWS cli
       pip:
-        name: aws-cli
+        name: awscli
+      when: ansible_os_family == "Debian"
+
+    - name: Install docker daemon and cli
       pip:
         name: docker
-        version: 2.4.5
+        version: 2.4.0
+      when: ansible_os_family == "Debian"
+
+    - name: Install docker compose
       pip:
         name: docker-compose
       when: ansible_os_family == "Debian"
