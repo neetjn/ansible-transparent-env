@@ -53,6 +53,11 @@
         state: present
       when: ansible_os_family == "Debian"
 
+    - name: Install bash completion
+      apt:
+        name: bash-completion
+      when: ansible_os_family == "Debian"
+
     - name: Install pylint cli and tools
       pip:
         name: pylint
