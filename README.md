@@ -15,6 +15,7 @@ These plays will only suffice for Debian based distributions.
 * docker
 * docker-compose
 * pylint
+* file-roller
 * nano
 * curl
 * httpie
