@@ -19,3 +19,4 @@ These plays will only suffice for Debian based distributions.
 * nano
 * curl
 * httpie
+* file-roller
