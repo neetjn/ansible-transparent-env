@@ -29,11 +29,11 @@ These plays will only suffice for the the Ubuntu based distributions.
 ### Use
 
 Clone the repository,
-```sh
+```bash
 git clone https://github.com/neetVeritas/ansible-plays-john.git
 ```
 Run the playbook,
-```sh
+```bash
 ansible-playbook playbook.yml
 ```
 
