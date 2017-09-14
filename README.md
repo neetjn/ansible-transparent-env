@@ -24,15 +24,15 @@ These plays will only suffice for the the Ubuntu based distributions.
 * webpack (version 2.2.0)
 
 ### Prerequisites
-* ansible 2
+* ansible 2 (available with jvm vagrant box)
 
 ### Use
 
-Clone the repository,
+Clone the repository
 ```bash
 git clone https://github.com/neetVeritas/ansible-plays-john.git
 ```
-Run the playbook,
+Run the playbook
 ```bash
 ansible-playbook playbook.yml
 ```
