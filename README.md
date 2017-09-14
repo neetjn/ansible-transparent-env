@@ -23,5 +23,19 @@ These plays will only suffice for the the Ubuntu based distributions.
 * coffeescript
 * webpack (version 2.2.0)
 
+### Prerequisites
+* ansible 2
+
+### Use
+
+Clone the repository,
+```sh
+git clone https://github.com/neetVeritas/ansible-plays-john.git
+```
+Run the playbook,
+```sh
+ansible-playbook playbook.yml
+```
+
 ---
 Copyright (c) 2017 John Nolette, Oro Team Licensed under the MIT license.
