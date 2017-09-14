@@ -1,0 +1,44 @@
+- name: Install build essentials for ubuntu
+  apt:
+    name: build-essential
+    state: present
+
+- name: Intall nano terminal editor
+  apt:
+    name: nano
+    state: present
+
+- name: Install gedit text editor
+  apt:
+    name: gedit
+    state: present
+
+- name: Intall file-roller archive manager
+  apt:
+    name: file-roller
+    state: present
+
+- name: Install redshift with gui for blue light management
+  apt:
+    name: redshift-gtk
+    state: present
+
+- name: Install plank for app dock
+  apt:
+    name: plank
+    state: present
+
+- name: Install curl cli
+  apt:
+    name: curl
+    state: present
+
+- name: Install pip python package manager
+  apt:
+    name: python-pip
+    state: present
+
+- name: Install bash completion
+  apt:
+    name: bash-completion
+    state: present

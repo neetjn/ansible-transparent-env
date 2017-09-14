@@ -1,0 +1,10 @@
+- name: Add Oranchelo repisotry
+  apt_repository:
+    repo: "ppa:oranchelo/oranchelo-icon-theme"
+    state: present
+
+- name: Install Oranchelo icons
+  apt:
+    name: oranchelo-icon-theme
+    update_cache: yes
+    state: present
