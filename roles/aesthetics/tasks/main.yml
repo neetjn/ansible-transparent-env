@@ -8,3 +8,10 @@
     name: oranchelo-icon-theme
     update_cache: yes
     state: present
+
+- name: Setup wallpapers
+  copy:
+    src: "{{ item }}"
+    dest: /usr/share/backgrounds
+  with_fileglob:
+    - roles/aesthetics/files/*
