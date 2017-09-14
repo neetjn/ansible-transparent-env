@@ -1,0 +1,17 @@
+- name: Add Oranchelo repisotry
+  apt_repository:
+    repo: "ppa:oranchelo/oranchelo-icon-theme"
+    state: present
+
+- name: Install Oranchelo icons
+  apt:
+    name: oranchelo-icon-theme
+    update_cache: yes
+    state: present
+
+- name: Setup wallpapers
+  copy:
+    src: "{{ item }}"
+    dest: /usr/share/backgrounds
+  with_fileglob:
+    - roles/aesthetics/files/*

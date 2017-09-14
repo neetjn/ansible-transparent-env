@@ -1,22 +1,27 @@
-# ansible-john-pull
+# ansible-plays-john
 Ansible playbook to install personal tools required for my workspace, and setup my environment.
 
 This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment). The Ansible plays described here will be applied to the Vagrant environment being built.
 
-These plays will only suffice for Debian based distributions.
+These plays will only suffice for the the Ubuntu based distributions.
 
-# Installed software
+### Software List
 
-* skypeforlinux
-* hipchat-4
-* vscode
-* aws-cli
-* node (+ n)
-* docker
-* docker-compose
-* pylint
 * file-roller
 * nano
 * curl
 * httpie
-* file-roller
+* gedit
+* skypeforlinux
+* hipchat-4
+* vscode
+* aws-cli
+* docker
+* docker-compose
+* pylint
+* node.js lts stable (n)
+* coffeescript
+* webpack (version 2.2.0)
+
+---
+Copyright (c) 2017 John Nolette, Oro Team Licensed under the MIT license.
