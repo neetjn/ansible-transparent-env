@@ -38,4 +38,4 @@ ansible-playbook playbook.yml
 ```
 
 ---
-Copyright (c) 2017 John Nolette, Oro Team Licensed under the MIT license.
+Copyright (c) 2017 John Nolette Licensed under the MIT license.
