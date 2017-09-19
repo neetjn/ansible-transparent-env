@@ -40,8 +40,8 @@
     global: yes
     state: present
 
-- name: Install node.js lts stable
-  shell: n stable
+- name: Install node.js 7 stable
+  shell: n 7
 
 - name: Install coffee-script
   npm:
