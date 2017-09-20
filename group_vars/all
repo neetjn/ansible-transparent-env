@@ -1,4 +1,4 @@
-git_generate_ssh_key: True
+git_generate_ssh_key: False
 git_generate_ssh_key_as_root: False
-git_ssh_key_user: anonymous@foobar.com
+git_ssh_key_user: john@neetgroup.ner
 git_ssh_key_path: /home/vagrant/.ssh
