@@ -1,9 +1,10 @@
 # ansible-plays-john
-Ansible playbook to install personal tools required for my workspace, and setup my environment.
 
-This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment). The Ansible plays described here will be applied to the Vagrant environment being built.
+Ansible playbook to install personal tools required for my workspace, and setup my development environment.
 
-These plays will only suffice for the the Ubuntu based distributions.
+This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment). The Ansible plays described here will be applied to the Vagrant environment.
+
+These plays are only supported by Debian based distributions, and have only been tested on Trusty and Xenial.
 
 ### Software List
 
@@ -22,6 +23,12 @@ These plays will only suffice for the the Ubuntu based distributions.
 * node.js lts stable (n)
 * coffeescript
 * webpack (version 2.2.0)
+
+### Variables:
+* **git_generate_ssh_key** (bool): Generate an ssh key for git.
+* **git_generate_ssh_key_as_root** (bool): Generate the key as the root user.
+* **git_ssh_key_user** (string): User for the ssh key.
+* **git_ssh_key_path** (string): Path to drop the key into.
 
 ### Prerequisites
 * ansible 2 (available with jvm vagrant box)

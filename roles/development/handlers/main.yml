@@ -1,9 +1,3 @@
-- name: Generate ssh key for git
-  shell: |
-    mkdir -p /etc/ssh/keys
-    ssh-keygen -t rsa -C "{{ssh_key_user}}" -f /etc/ssh/keys/git -N ''
-  when: ssh_key_exists.exists == False
-
 - name: Install Code extensions
   shell: |
     code --install-extension EditorConfig.EditorConfig
