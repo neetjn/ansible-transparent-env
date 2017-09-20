@@ -2,16 +2,6 @@
 - name: Apply configurations to local machine
   hosts: localhost
 
-  vars_prompt:
-    - name: "generate_ssh_key"
-      prompt: "Would you like to generate an ssh key for git? (yes/no)"
-      default: "yes"
-      private: no
-    - name: "ssh_key_user"
-      prompt: "If you are generating an ssh key, enter your preferred email"
-      default: ""
-      private: no
-
   roles:
     - common
     - development
