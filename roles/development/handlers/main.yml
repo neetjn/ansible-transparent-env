@@ -21,4 +21,5 @@
     code --install-extension waderyan.nodejs-extension-pack
     code --install-extension xabikos.JavaScriptSnippets
     code --install-extension zhuangtongfa.Material-theme
+    code --install-extension dracula-theme.theme-dracula
   become: False
