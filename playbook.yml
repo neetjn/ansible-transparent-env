@@ -4,5 +4,8 @@
 
   roles:
     - common
+    - development
+    - social
+    - aesthetics
 
   become: True
