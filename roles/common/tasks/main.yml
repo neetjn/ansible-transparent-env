@@ -42,3 +42,15 @@
   apt:
     name: bash-completion
     state: present
+
+- name: Install mono .NET framework
+  apt:
+    name: mono-complete
+    state: present
+
+- name: Create fiddler directory
+  file:
+    path: "{{fiddler_directory}}"
+    state: directory
+  become: False
+  notify: Download telerik fiddler for linux
