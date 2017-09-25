@@ -23,6 +23,8 @@ These plays are only supported by Debian based distributions, and have only been
 * node.js lts stable (n)
 * coffeescript
 * webpack (version 2.2.0)
+* mono (.NET) complete
+* telerik fiddler web debugger
 
 ### Variables:
 * **git_generate_ssh_key** (bool): Generate an ssh key for git.

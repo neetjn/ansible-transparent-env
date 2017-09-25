@@ -1,3 +1,4 @@
+fiddler_directory: /home/vagrant/fiddler
 git_generate_ssh_key: True
 git_generate_ssh_key_as_root: False
 git_ssh_key_user: john@neetgroup.net
