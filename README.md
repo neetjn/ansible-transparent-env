@@ -28,12 +28,6 @@ These plays are only supported by Debian based distributions, and have only been
 * teamviewer
 * hamachi vpn
 
-### Variables:
-* **git_generate_ssh_key** (bool): Generate an ssh key for git.
-* **git_generate_ssh_key_as_root** (bool): Generate the key as the root user.
-* **git_ssh_key_user** (string): User for the ssh key.
-* **git_ssh_key_path** (string): Path to drop the key into.
-
 ### Prerequisites
 * ansible 2 (available with jvm vagrant box)
 

@@ -1,6 +1,19 @@
 ---
+
 - name: Apply configurations to local machine
   hosts: localhost
+
+  pre_tasks:
+    - name: Get the username of the user running ansible
+      local_action: command whoami
+      register: host_username
+      become: False
+
+    - set_fact:
+        host_username: "{{host_username.stdout}}"
+        home_directory: "/home/{{host_username.stdout}}"
+        fiddler_directory: "/home/{{host_username.stdout}}/fiddler"
+        ssh_directory: "/home/{{host_username.stdout}}/.ssh"
 
   roles:
     - common

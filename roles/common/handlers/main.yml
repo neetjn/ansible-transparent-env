@@ -2,18 +2,24 @@
   get_url:
     url: http://telerik-fiddler.s3.amazonaws.com/fiddler/fiddler-linux.zip
     dest: "{{fiddler_directory}}/fiddler.zip"
-    owner: vagrant
+    owner: "{{host_username}}"
   notify: Unpack telerik fiddler archive
 
 - name: Unpack telerik fiddler archive
   unarchive:
     src: "{{fiddler_directory}}/fiddler.zip"
     dest: "{{fiddler_directory}}"
-    owner: vagrant
+    owner: "{{host_username}}"
+  notify: Delete telerik fiddler archive
+
+- name: Delete telerik fiddler archive
+  file:
+    path: "{{fiddler_directory}}/fiddler.zip"
+    state: absent
   notify: Create alias for fiddler
 
 - name: Create alias for fiddler
   lineinfile:
-    path: /home/vagrant/.bashrc
+    dest: "{{home_directory}}/.bashrc"
     line: 'alias fiddler="mono {{fiddler_directory}}/Fiddler.exe"'
-  become: False
+    owner: "{{host_username}}"
