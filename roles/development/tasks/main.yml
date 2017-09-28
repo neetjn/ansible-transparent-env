@@ -51,8 +51,8 @@
     global: yes
     state: present
 
-- name: Install node.js 7 stable
-  shell: n 7
+- name: Install node.js 6 stable
+  shell: n 6.9.2
 
 - name: Install coffee-script
   npm:

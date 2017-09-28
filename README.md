@@ -2,7 +2,7 @@
 
 Ansible playbook to install personal tools required for my workspace, and setup my development environment.
 
-This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment). The Ansible plays described here will be applied to the Vagrant environment.
+This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment).
 
 These plays are only supported by Debian based distributions, and have only been tested on Trusty and Xenial.
 
@@ -27,6 +27,10 @@ These plays are only supported by Debian based distributions, and have only been
 * telerik fiddler web debugger
 * teamviewer
 * hamachi vpn
+
+### Variables
+
+* **git_ssh_key_user**: Username of ssh key generated for git.
 
 ### Prerequisites
 * ansible 2 (available with jvm vagrant box)
