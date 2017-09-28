@@ -1,15 +1,13 @@
 - name: Check if ssh key exists
   stat:
-    path: "{{git_ssh_key_path}}/git"
+    path: "{{ssh_directory}}/git"
   register: git_ssh_key_exists
-  when: git_generate_ssh_key
 
 - name: Generate ssh key for git
   shell: |
     mkdir -p /etc/ssh/keys
-    ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{git_ssh_key_path}}/git" -N ''
-  when: git_generate_ssh_key and git_ssh_key_exists.stat.exists == False
-  become: "{{git_generate_ssh_key_as_root}}"
+    ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/git" -N ''
+  when: git_ssh_key_exists.stat.exists == False
 
 - name: Install pylint cli and tools
   pip:
