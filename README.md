@@ -27,6 +27,7 @@ These plays are only supported by Debian based distributions, and have only been
 * telerik fiddler web debugger
 * teamviewer
 * hamachi vpn
+* keybase
 
 ### Variables
 
