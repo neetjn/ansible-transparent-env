@@ -1,8 +1,10 @@
+# check if skype installed
 - name: Check Skype installed
   shell: which skypeforlinux
   register: skype_check
   ignore_errors: True
 
+# install latest version of skype
 - name: Install Skype
   shell: |
     wget -O skype.deb "https://repo.skype.com/latest/skypeforlinux-$(echo `getconf LONG_BIT`).deb"
@@ -10,11 +12,13 @@
     rm -rf skype.deb
   when: skype_check.rc == 1
 
+# check if hipchat installed
 - name: Check Hipchat 4 installed
   shell: which hipchat4
   register: hipchat_check
   ignore_errors: True
 
+# install latest version of hipchat
 - name: Install Hipchat 4
   shell: |
     sh -c 'echo "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-  apt-client $(lsb_release -c -s) main" > /etc/apt/sources.list.d/atlassian-hipchat4.list'
@@ -23,11 +27,13 @@
     apt-get install hipchat4
   when: hipchat_check.rc == 1
 
+# check if teamviewer installed
 - name: Check Teamviewer installed
   shell: which teamviewer
   register: teamviewer_check
   ignore_errors: True
 
+# install latest version of teamviewer for linux
 - name: Install Teamviewer
   shell: |
     wget -O tv.deb https://download.teamviewer.com/download/teamviewer_i386.deb
@@ -36,11 +42,13 @@
     apt-get install -f -y
   when: teamviewer_check.rc == 1
 
+# check if hamachi installed
 - name: Check Hamachi installed
   shell: which hamachi
   register: hamachi_check
   ignore_errors: True
 
+# install latest version of hamachi for linux
 - name: Install Hamachi
   shell: |
     wget -O hamachi.deb https://www.vpn.net/installers/logmein-hamachi_2.1.0.174-1_i386.deb
@@ -48,11 +56,13 @@
     rm -rf hamachi.deb
   when: hamachi_check.rc == 1
 
+# check if keybase installed
 - name: Check Keybase installed
   shell: which keybase
   register: keybase_check
   ignore_errors: True
 
+# install latest version of keybase
 - name: Install Keybase
   shell: |
     curl -O https://prerelease.keybase.io/keybase_i386.deb
