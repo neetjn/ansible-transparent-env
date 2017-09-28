@@ -26,6 +26,7 @@ These plays are only supported by Debian based distributions, and have only been
 * mono (.NET) complete
 * telerik fiddler web debugger
 * teamviewer
+* hamachi vpn
 
 ### Variables:
 * **git_generate_ssh_key** (bool): Generate an ssh key for git.
