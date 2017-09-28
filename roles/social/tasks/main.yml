@@ -22,3 +22,16 @@
     apt-get update
     apt-get install hipchat4
   when: hipchat_check.rc == 1
+
+- name: Check Teamviewer installed
+  shell: which teamviewer
+  register: teamviewer_check
+  ignore_errors: True
+
+- name: Install Teamviewer
+  shell: |
+    wget -O tv.deb https://download.teamviewer.com/download/teamviewer_i386.deb
+    dpkg --install tv.deb
+    rm -rf tv.deb
+    apt-get install -f -y
+  when: teamviewer_check.rc == 1
