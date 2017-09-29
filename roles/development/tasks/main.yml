@@ -4,7 +4,9 @@
   register: git_ssh_key_exists
 
 - name: Generate ssh key for git
-  shell: ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/git" -N ''
+  shell: |
+    ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/git" -N ''
+  become: False
   when: git_ssh_key_exists.stat.exists == False
 
 - name: Install pylint cli and tools
