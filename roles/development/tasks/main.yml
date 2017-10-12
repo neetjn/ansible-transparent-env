@@ -34,15 +34,11 @@
   shell: curl https://get.docker.com/ | sh
   when: docker_check.rc == 1
 
-- name: Install py-docker
-  pip:
-    name: docker
-    version: 2.4.0
-    state: present
-
+# https://github.com/ansible/ansible/issues/20492#issuecomment-274081101
 - name: Install docker compose
   pip:
     name: docker-compose
+    version: 1.9.0
     state: present
 
 - name: Install n node.js version manager
