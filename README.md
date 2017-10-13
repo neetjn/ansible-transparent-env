@@ -20,6 +20,7 @@ These plays are only supported by Debian based distributions, and have only been
 * docker
 * docker-compose
 * pylint
+* twine
 * node.js 6 stable (n)
 * coffeescript
 * webpack (version 2.2.0)
