@@ -40,6 +40,11 @@
     name: docker-compose
     version: 1.9.0
     state: present
+    
+- name: Install Twine
+  pip:
+    name: twine
+    state: present
 
 - name: Install n node.js version manager
   npm:
