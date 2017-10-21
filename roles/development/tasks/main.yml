@@ -77,7 +77,7 @@
 # will install the latest version of vscode
 - name: Install Code
   shell: |
-    wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868"
+    wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
     dpkg --install code.deb
     rm -rf code.deb
   when: code_check.rc == 1
