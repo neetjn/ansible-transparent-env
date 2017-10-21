@@ -10,7 +10,7 @@
     code --install-extension donjayamanne.python
     code --install-extension dzannotti.vscode-babel-coloring
     code --install-extension eg2.vscode-npm-script
-    code --install-extension file-icons.file-icons
+    code --install-extension PKief.material-icon-theme
     code --install-extension formulahendry.terminal
     code --install-extension gerane.Theme-azure
     code --install-extension hnw.vscode-auto-open-markdown-preview
@@ -22,4 +22,5 @@
     code --install-extension xabikos.JavaScriptSnippets
     code --install-extension zhuangtongfa.Material-theme
     code --install-extension dracula-theme.theme-dracula
+    code --install-extension Equinusocio.vsc-material-theme
   become: False
