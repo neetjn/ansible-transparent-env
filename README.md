@@ -34,7 +34,9 @@ These plays are only supported by Debian based distributions, and have only been
 * **git_ssh_key_user**: Username of ssh key generated for git.
 
 ### Prerequisites
-* ansible 2 (available with jvm vagrant box)
+* ansible 2
+
+*due to a change in version 2.4 defined [here](https://github.com/ansible/ansible/issues/31041), any version of ansible above 2.3.x is not recommended*
 
 ### Use
 
