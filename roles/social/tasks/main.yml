@@ -55,18 +55,3 @@
     dpkg --install hamachi.deb
     rm -rf hamachi.deb
   when: hamachi_check.rc == 1
-
-# check if keybase installed
-- name: Check Keybase installed
-  shell: which keybase
-  register: keybase_check
-  ignore_errors: True
-
-# install latest version of keybase
-- name: Install Keybase
-  shell: |
-    curl -O https://prerelease.keybase.io/keybase_i386.deb
-    sudo dpkg -i keybase_i386.deb
-    sudo apt-get install -f
-    rm -rf keybase_i386.deb
-  when: keybase_check.rc == 1

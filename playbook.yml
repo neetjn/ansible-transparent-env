@@ -15,6 +15,11 @@
         fiddler_directory: "/home/{{host_username.stdout}}/fiddler"
         ssh_directory: "/home/{{host_username.stdout}}/.ssh"
 
+  post_tasks:
+    - name: Install missing dependencies
+      shell: apt-get install -f -y
+      ignore_errors: True
+
   roles:
     - common
     - development
