@@ -17,6 +17,16 @@
   apt:
     name: file-roller
     state: present
+    
+- name: Install vlc media player
+  apt:
+    name: vlc
+    state: present
+    
+- name: Install vlc browser plugin
+  apt:
+    name: browser-plugin-vlc
+    state: present
 
 - name: Install redshift with gui for blue light management
   apt:
