@@ -46,7 +46,7 @@ These plays are only supported by Debian based distributions, and have only been
 
 Clone the repository
 ```bash
-git clone https://github.com/neetVeritas/ansible-plays-john.git
+git clone https://github.com/neetjn/ansible-plays-john.git
 ```
 Run the playbook
 ```bash
