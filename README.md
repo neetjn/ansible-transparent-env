@@ -40,8 +40,7 @@ These plays are only supported by Debian based distributions, and have only been
 
 ### Prerequisites
 * ansible 2.0 - 2.3
-
-*due to a change in version 2.4 defined [here](https://github.com/ansible/ansible/issues/31041), any version of ansible above 2.3.x is not recommended*
+  *due to a change in version 2.4 defined [here](https://github.com/ansible/ansible/issues/31041), any version of ansible above 2.3.x is not recommended*
 
 ### Use
 
