@@ -6,9 +6,7 @@
 
 Ansible playbook to install personal tools required for my workspace, and setup my development environment.
 
-This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment).
-
-These plays are only supported by Debian based distributions, and have only been tested on Trusty and Xenial.
+This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment), but will work with any Ubuntu based distribution using Trusty or Xenial.
 
 ### Software List
 
@@ -19,6 +17,9 @@ These plays are only supported by Debian based distributions, and have only been
 * gedit
 * skypeforlinux
 * hipchat-4
+* slack desktop client
+* teamviewer
+* vlc media player
 * vscode
 * aws-cli
 * docker
@@ -30,17 +31,18 @@ These plays are only supported by Debian based distributions, and have only been
 * webpack (version 2.2.0)
 * mono (.NET) complete
 * telerik fiddler web debugger
-* teamviewer
 * hamachi vpn
-* vlc media player
 
 ### Variables
+
+Playbook inventory variables can be found in `groupvars/all.yml`.
 
 * **git_ssh_key_user**: Username of ssh key generated for git.
 
 ### Prerequisites
+
 * ansible 2.0 - 2.3
-  * *due to a change in version 2.4 defined [here](https://github.com/ansible/ansible/issues/31041), any version of ansible above 2.3.x is not recommended*
+  * *due to a change in version 2.4 explained [here](https://github.com/ansible/ansible/issues/31041), any version of ansible above 2.3.x is not recommended*
 
 ### Use
 
@@ -50,7 +52,7 @@ git clone https://github.com/neetjn/ansible-plays-john.git
 ```
 Run the playbook
 ```bash
-ansible-playbook playbook.yml
+ansible-playbook ansible-plays-john/playbook.yml
 ```
 
 ---
