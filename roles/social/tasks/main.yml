@@ -1,10 +1,8 @@
-# check if skype installed
 - name: Check Skype installed
   shell: which skypeforlinux
   register: skype_check
   ignore_errors: True
 
-# install latest version of skype
 - name: Install Skype
   shell: |
     wget -O skype.deb "https://repo.skype.com/latest/skypeforlinux-$(echo `getconf LONG_BIT`).deb"
@@ -12,13 +10,11 @@
     rm -rf skype.deb
   when: skype_check.rc == 1
 
-# check if hipchat installed
 - name: Check Hipchat 4 installed
   shell: which hipchat4
   register: hipchat_check
   ignore_errors: True
 
-# install latest version of hipchat
 - name: Install Hipchat 4
   shell: |
     sh -c 'echo "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-  apt-client $(lsb_release -c -s) main" > /etc/apt/sources.list.d/atlassian-hipchat4.list'
@@ -27,32 +23,38 @@
     apt-get install hipchat4
   when: hipchat_check.rc == 1
 
-# check if teamviewer installed
 - name: Check Teamviewer installed
   shell: which teamviewer
   register: teamviewer_check
   ignore_errors: True
 
-# install latest version of teamviewer for linux
 - name: Install Teamviewer
   shell: |
     wget -O tv.deb https://download.teamviewer.com/download/teamviewer_i386.deb
     dpkg --install tv.deb
     rm -rf tv.deb
-    apt-get install -f -y
   when: teamviewer_check.rc == 1
 
-# check if hamachi installed
 - name: Check Hamachi installed
   shell: which hamachi
   register: hamachi_check
   ignore_errors: True
 
-# install latest version of hamachi for linux
 - name: Install Hamachi
   shell: |
     wget -O hamachi.deb https://www.vpn.net/installers/logmein-hamachi_2.1.0.174-1_i386.deb
     dpkg --install hamachi.deb
     rm -rf hamachi.deb
   when: hamachi_check.rc == 1
-  
+
+- name: Check Slack installed
+  shell: which slack
+  register: slack_check
+  ignore_errors: True
+
+- name: Install Slack
+  shell: |
+    wget -O slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb
+    dpkg --install slack.deb
+    rm -rf slack.deb
+  when: slack_check.rc == 1
