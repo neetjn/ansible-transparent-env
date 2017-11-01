@@ -35,7 +35,7 @@ This project is a sub-project of the [JVM Development Environment](https://githu
 
 ### Variables
 
-Playbook inventory variables can be found in `groupvars/all.yml`.
+Playbook inventory variables can be found in `group_vars/all.yml`.
 
 * **git_ssh_key_user**: Username of ssh key generated for git.
 
