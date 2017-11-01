@@ -58,3 +58,15 @@
     dpkg --install slack.deb
     rm -rf slack.deb
   when: slack_check.rc == 1
+
+- name: Check Gitter installed
+  shell: which gitter
+  register: gitter_check
+  ignore_errors: True
+
+- name: Install Gitter
+  shell: |
+    wget -O gitter.deb https://update.gitter.im/linux64/gitter_3.1.0_amd64.deb
+    dpkg --install gitter.deb
+    rm -rf gitter.deb
+  when: gitter_check.rc == 1

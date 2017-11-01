@@ -6,7 +6,7 @@
 
 Ansible playbook to install personal tools required for my workspace, and setup my development environment.
 
-This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment), but will work with any Ubuntu based distribution using Trusty or Xenial.
+This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment), but will work with any 64 bit Ubuntu based distribution using Trusty or Xenial.
 
 The playbook has been broken up into four individual role groups:
 
@@ -44,6 +44,7 @@ The playbook has been broken up into four individual role groups:
 * Install skype client.
 * Install hipchat desktop client.
 * Install slack desktop client.
+* Install gitter desktop client.
 * Install teamviewer.
 
 ## Variables
