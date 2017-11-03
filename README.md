@@ -31,6 +31,7 @@ The playbook has been broken up into four individual role groups:
 * Install node.js 6 stable (using n tool).
 * Install coffeescript.
 * Install webpack (version 2.2.0).
+* Install ruby.
 * Install mono (.NET) complete.
 * Install telerik fiddler web debugger.
 
