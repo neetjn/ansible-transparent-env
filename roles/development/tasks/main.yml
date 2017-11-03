@@ -68,6 +68,16 @@
     version: '2.2.0'
     global: yes
     state: present
+    
+- name: Install ruby
+  apt:
+    name: ruby
+    state: present
+    
+- name: Install ruby development tools
+  apt:
+    name: ruby-dev
+    state: present
 
 # check if vscode installed
 - name: Check VSCode Installed
