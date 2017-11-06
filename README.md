@@ -19,6 +19,7 @@ The playbook has been broken up into four individual role groups:
 * Install gedit (gui text editor).
 * Install vlc media player (media management).
 * Install logmein hamachi vpn.
+* Install gyazo screen capture.
 
 #### Development
 
@@ -70,6 +71,15 @@ cd ansible-plays-john
 
 ansible-playbook playbook.yml
 ```
+
+## Contributing
+
+Contributing guidelines are as follows,
+
+* Any new bugs or features must have a parent task/issue associated them them.
+    * Branches for bugs and features should be structured like so, `issue-x-username`.
+* Before putting in a pull request, try running each role on in clean environment.
+* Be sure to include your respective changes in the related role description.
 
 ---
 Copyright (c) 2017 John Nolette Licensed under the MIT license.
