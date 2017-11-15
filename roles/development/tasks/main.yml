@@ -41,7 +41,7 @@
     name: docker-compose
     version: 1.9.0
     state: present
-    
+
 - name: Install Twine
   pip:
     name: twine
@@ -68,12 +68,17 @@
     version: '2.2.0'
     global: yes
     state: present
-    
+
 - name: Install ruby
   apt:
     name: ruby
     state: present
-    
+
+- name: Install travis-cli
+  gem:
+    name: travis-cli
+    state: present
+
 - name: Install ruby development tools
   apt:
     name: ruby-dev
