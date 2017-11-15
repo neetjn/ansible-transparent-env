@@ -1,5 +1,6 @@
 - name: Install Code extensions
   shell: |
+    code --install-extension ms-python.python
     code --install-extension EditorConfig.EditorConfig
     code --install-extension abusaidm.html-snippets
     code --install-extension arcticicestudio.nord-visual-studio-code
