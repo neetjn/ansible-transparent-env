@@ -74,14 +74,14 @@
     name: ruby
     state: present
 
-- name: Install travis-cli
-  gem:
-    name: travis-cli
-    state: present
-
 - name: Install ruby development tools
   apt:
     name: ruby-dev
+    state: present
+
+- name: Install travis-cli
+  gem:
+    name: travis-cli
     state: present
 
 # check if vscode installed
@@ -97,4 +97,5 @@
     dpkg --install code.deb
     rm -rf code.deb
   when: code_check.rc == 1
+  changed_when: code_check.rc == 1
   notify: Install Code extensions
