@@ -75,5 +75,5 @@
 - name: Install Gyazo
   shell: |
     curl -s https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh | sudo bash
-    apt-get install gyazo
+    apt-get install gyazo -y
   when: gyazo_check.rc == 1
