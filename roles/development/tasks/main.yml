@@ -8,6 +8,16 @@
     ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/git" -N ''
   become: False
   when: git_ssh_key_exists.stat.exists == False
+  
+- name: Install Python development libs
+  apt:
+    name: python-dev
+    state: present
+    
+- name: Install Python (3.6) development libs
+  apt:
+    name: python3.6-dev
+    state: present
 
 - name: Install pylint cli and tools
   pip:
