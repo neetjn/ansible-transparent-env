@@ -25,4 +25,6 @@
     code --install-extension dracula-theme.theme-dracula
     code --install-extension Equinusocio.vsc-material-theme
     code --install-extension alireza94.theme-gotham
+    code --install-extension raashida.fixthecode-vs
+    code --install-extension gerane.theme-artschool
   become: False
