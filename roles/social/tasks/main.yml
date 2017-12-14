@@ -35,18 +35,6 @@
     rm -rf tv.deb
   when: teamviewer_check.rc == 1
 
-- name: Check Hamachi installed
-  shell: which hamachi
-  register: hamachi_check
-  ignore_errors: True
-
-- name: Install Hamachi
-  shell: |
-    wget -O hamachi.deb https://www.vpn.net/installers/logmein-hamachi_2.1.0.174-1_i386.deb
-    dpkg --install hamachi.deb
-    rm -rf hamachi.deb
-  when: hamachi_check.rc == 1
-
 - name: Check Slack installed
   shell: which slack
   register: slack_check
