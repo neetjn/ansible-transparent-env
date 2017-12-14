@@ -14,7 +14,6 @@ The playbook has been broken up into four individual role groups:
 * Install httpie (cli http tool).
 * Install gedit (gui text editor).
 * Install vlc media player (media management).
-* Install logmein hamachi vpn.
 * Install gyazo screen capture.
 
 #### Development
