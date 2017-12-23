@@ -24,6 +24,7 @@ The playbook has been broken up into four individual role groups:
 * Install vscode.
 * Install pylint.
 * Install twine (pypi package manager).
+* Install sphinx (docs generator).
 * Install node.js 6 stable (using n tool).
 * Install coffeescript.
 * Install webpack (version 2.2.0).
