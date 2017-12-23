@@ -56,6 +56,11 @@
   pip:
     name: twine
     state: present
+    
+- name: Install Sphinx
+  pip:
+    name: sphinx
+    state: present
 
 - name: Install n node.js version manager
   npm:
