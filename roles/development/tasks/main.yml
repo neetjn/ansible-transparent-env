@@ -116,33 +116,33 @@
 # will install vscode extensions
 - name: Install Code Extensions
   shell: |
-    code --install-extension ms-python.python
-    code --install-extension EditorConfig.EditorConfig
-    code --install-extension abusaidm.html-snippets
-    code --install-extension arcticicestudio.nord-visual-studio-code
-    code --install-extension christian-kohler.npm-intellisense
-    code --install-extension christian-kohler.path-intellisense
-    code --install-extension crisward.riot-tag
-    code --install-extension dbaeumer.vscode-eslint
-    code --install-extension donjayamanne.python
-    code --install-extension dzannotti.vscode-babel-coloring
-    code --install-extension eg2.vscode-npm-script
-    code --install-extension PKief.material-icon-theme
-    code --install-extension formulahendry.terminal
-    code --install-extension gerane.Theme-azure
-    code --install-extension hnw.vscode-auto-open-markdown-preview
-    code --install-extension jasonnutter.search-node-modules
-    code --install-extension liuji-jim.vue
-    code --install-extension marcostazi.VS-code-vagrantfile
-    code --install-extension octref.vetur
-    code --install-extension waderyan.nodejs-extension-pack
-    code --install-extension xabikos.JavaScriptSnippets
-    code --install-extension zhuangtongfa.Material-theme
-    code --install-extension dracula-theme.theme-dracula
-    code --install-extension Equinusocio.vsc-material-theme
-    code --install-extension alireza94.theme-gotham
-    code --install-extension raashida.fixthecode-vs
-    code --install-extension gerane.theme-artschool
+    code --install-extension ms-python.python && \
+    code --install-extension EditorConfig.EditorConfig && \
+    code --install-extension abusaidm.html-snippets && \
+    code --install-extension arcticicestudio.nord-visual-studio-code && \
+    code --install-extension christian-kohler.npm-intellisense && \
+    code --install-extension christian-kohler.path-intellisense && \
+    code --install-extension crisward.riot-tag && \
+    code --install-extension dbaeumer.vscode-eslint && \
+    code --install-extension donjayamanne.python && \
+    code --install-extension dzannotti.vscode-babel-coloring && \
+    code --install-extension eg2.vscode-npm-script && \
+    code --install-extension PKief.material-icon-theme && \
+    code --install-extension formulahendry.terminal && \
+    code --install-extension gerane.Theme-azure && \
+    code --install-extension hnw.vscode-auto-open-markdown-preview && \
+    code --install-extension jasonnutter.search-node-modules && \
+    code --install-extension liuji-jim.vue && \
+    code --install-extension marcostazi.VS-code-vagrantfile && \
+    code --install-extension octref.vetur && \
+    code --install-extension waderyan.nodejs-extension-pack && \
+    code --install-extension xabikos.JavaScriptSnippets && \
+    code --install-extension zhuangtongfa.Material-theme && \
+    code --install-extension dracula-theme.theme-dracula && \
+    code --install-extension Equinusocio.vsc-material-theme && \
+    code --install-extension alireza94.theme-gotham && \
+    code --install-extension raashida.fixthecode-vs && \
+    code --install-extension gerane.theme-artschool && \
     code --install-extension lextudio.restructuredtext
   become: False
   when: code_check.rc == 1
