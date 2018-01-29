@@ -6,7 +6,6 @@
 - name: Install Oranchelo icons
   apt:
     name: oranchelo-icon-theme
-    update_cache: yes
     state: present
 
 - name: Setup wallpapers
