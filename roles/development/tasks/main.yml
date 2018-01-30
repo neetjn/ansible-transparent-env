@@ -143,6 +143,7 @@
     code --install-extension alireza94.theme-gotham && \
     code --install-extension raashida.fixthecode-vs && \
     code --install-extension gerane.theme-artschool && \
-    code --install-extension lextudio.restructuredtext
+    code --install-extension lextudio.restructuredtext && \
+    code --install-extension eg2.tslint
   become: False
   when: code_check.rc == 1
