@@ -144,6 +144,6 @@
     code --install-extension raashida.fixthecode-vs && \
     code --install-extension gerane.theme-artschool && \
     code --install-extension lextudio.restructuredtext && \
-    code --install-extension eg2.tslint
+    code --install-extension loiane.ts-extension-pack
   become: False
   when: code_check.rc == 1
