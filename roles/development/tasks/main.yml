@@ -99,6 +99,19 @@
     name: travis-cli
     state: present
 
+# check if mongodb-compass installed
+- name: Check mongodb compass Installed
+  shell: which mongodb-compass
+  register: compass_check
+  ignore_errors: True
+
+- name: Install mongodb compass
+  shell: |
+    wget -O compass.deb https://downloads.mongodb.com/compass/mongodb-compass_1.11.1_amd64.deb
+    dpkg --install compass.deb
+    rm -rf compass.deb
+  when: compass_check.rc == 1
+
 # check if vscode installed
 - name: Check VSCode Installed
   shell: which code
