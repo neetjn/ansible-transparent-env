@@ -19,6 +19,7 @@ The playbook has been broken up into four individual role groups:
 #### Development
 
 * Install aws-cli.
+* install mongodb compass.
 * Install docker.
 * Install docker-compose.
 * Install vscode.
