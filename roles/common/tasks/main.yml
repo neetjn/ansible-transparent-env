@@ -53,18 +53,6 @@
     name: bash-completion
     state: present
 
-- name: Install mono .NET framework
-  apt:
-    name: mono-complete
-    state: present
-
-- name: Create fiddler directory
-  file:
-    path: "{{fiddler_directory}}"
-    state: directory
-    owner: "{{host_username}}"
-  notify: Download telerik fiddler for linux
-
 - name: Check Gyazo installed
   shell: which gyazo
   register: gyazo_check

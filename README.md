@@ -31,8 +31,6 @@ The playbook has been broken up into four individual role groups:
 * Install webpack (version 2.2.0).
 * Install ruby.
 * Install travis-cli.
-* Install mono (.NET) complete.
-* Install telerik fiddler web debugger.
 
 #### Aesthetics
 

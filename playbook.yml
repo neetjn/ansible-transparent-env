@@ -12,7 +12,6 @@
     - set_fact:
         host_username: "{{host_username.stdout}}"
         home_directory: "/home/{{host_username.stdout}}"
-        fiddler_directory: "/home/{{host_username.stdout}}/fiddler"
         ssh_directory: "/home/{{host_username.stdout}}/.ssh"
 
   post_tasks:
