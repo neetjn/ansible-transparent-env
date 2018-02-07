@@ -159,6 +159,7 @@
     code --install-extension lextudio.restructuredtext && \
     code --install-extension loiane.ts-extension-pack && \
     code --install-extension wesbos.theme-cobalt2 && \
-    code --install-extension josef.rouge-theme
+    code --install-extension josef.rouge-theme && \
+    code --install-extension eamodio.gitlens
   become: False
   when: code_check.rc == 1
