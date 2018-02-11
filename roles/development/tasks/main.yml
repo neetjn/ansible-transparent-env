@@ -160,6 +160,7 @@
     code --install-extension loiane.ts-extension-pack && \
     code --install-extension wesbos.theme-cobalt2 && \
     code --install-extension josef.rouge-theme && \
-    code --install-extension eamodio.gitlens
+    code --install-extension eamodio.gitlens && \
+    code --install-extension formulahendry.auto-close-tag
   become: False
   when: code_check.rc == 1
