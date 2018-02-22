@@ -13,6 +13,10 @@
         host_username: "{{host_username.stdout}}"
         home_directory: "/home/{{host_username.stdout}}"
         ssh_directory: "/home/{{host_username.stdout}}/.ssh"
+        
+    - name: Update apt repository cache
+      apt:
+        update_cache: True
 
   post_tasks:
     - name: Install missing dependencies
