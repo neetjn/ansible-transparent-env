@@ -26,9 +26,9 @@ The playbook has been broken up into four individual role groups:
 * Install pylint.
 * Install twine (pypi package manager).
 * Install sphinx (docs generator).
-* Install node.js 6 stable (using n tool).
+* Install node.js 8 stable (using n tool).
 * Install coffeescript.
-* Install webpack (version 2.2.0).
+* Install webpack.
 * Install ruby.
 * Install travis-cli.
 
