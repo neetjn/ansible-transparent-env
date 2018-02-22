@@ -68,8 +68,8 @@
     global: yes
     state: present
 
-- name: Install node.js 6 stable
-  shell: n 6.9.2
+- name: Install node.js 8 stable
+  shell: n 8
 
 - name: Install coffee-script
   npm:
@@ -80,7 +80,6 @@
 - name: Install webpack
   npm:
     name: webpack
-    version: '2.2.0'
     global: yes
     state: present
 
@@ -163,4 +162,4 @@
     code --install-extension eamodio.gitlens && \
     code --install-extension formulahendry.auto-close-tag
   become: False
-  when: code_check.rc == 1
+  ignore_errors: True
