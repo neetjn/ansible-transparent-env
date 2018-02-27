@@ -106,10 +106,23 @@
 
 - name: Install mongodb compass
   shell: |
-    wget -O compass.deb https://downloads.mongodb.com/compass/mongodb-compass_1.11.1_amd64.deb
-    dpkg --install compass.deb
-    rm -rf compass.deb
+    wget -O /tmp/compass.deb https://downloads.mongodb.com/compass/mongodb-compass_1.11.1_amd64.deb
+    dpkg --install /tmp/compass.deb
+    rm -rf /tmp/compass.deb
   when: compass_check.rc == 1
+
+  # check if sqlectron installed
+- name: Check sqlectron Installed
+  shell: which sqlectron
+  register: sqlectron_check
+  ignore_errors: True
+
+- name: Install sqlectron
+  shell: |
+    wget -O /tmp/sqlectron.deb https://github.com/sqlectron/sqlectron-gui/releases/download/v1.29.0/Sqlectron_1.29.0_amd64.deb
+    dpkg --install /tmp/sqlectron.deb
+    rm -rf /tmp/sqlectron.deb
+  when: sqlectron_check.rc == 1
 
 # check if vscode installed
 - name: Check VSCode Installed
@@ -120,9 +133,9 @@
 # will install the latest version of vscode
 - name: Install Code
   shell: |
-    wget -O code.deb https://go.microsoft.com/fwlink/?LinkID=760868
-    dpkg --install code.deb
-    rm -rf code.deb
+    wget -O /tmp/code.deb https://go.microsoft.com/fwlink/?LinkID=760868
+    dpkg --install /tmp/code.deb
+    rm -rf /tmp/code.deb
   when: code_check.rc == 1
 
 # will install vscode extensions

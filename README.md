@@ -20,6 +20,7 @@ The playbook has been broken up into four individual role groups:
 
 * Install aws-cli.
 * install mongodb compass.
+* Install sqlectron.
 * Install docker.
 * Install docker-compose.
 * Install vscode.
@@ -50,13 +51,6 @@ The playbook has been broken up into four individual role groups:
 Playbook inventory variables can be found in `group_vars/all.yml`.
 
     git_ssh_key_user: Label of ssh key generated for git.
-
-## Prerequisites
-
-    git
-    ansible 2.0 - 2.3
-
-Due to a change in version 2.4 explained [here](https://github.com/ansible/ansible/issues/31041), any version of ansible above 2.3.x is not recommended.
 
 ## Use
 
