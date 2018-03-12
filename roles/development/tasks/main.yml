@@ -149,7 +149,6 @@
     code --install-extension christian-kohler.path-intellisense && \
     code --install-extension crisward.riot-tag && \
     code --install-extension dbaeumer.vscode-eslint && \
-    code --install-extension donjayamanne.python && \
     code --install-extension dzannotti.vscode-babel-coloring && \
     code --install-extension eg2.vscode-npm-script && \
     code --install-extension PKief.material-icon-theme && \
