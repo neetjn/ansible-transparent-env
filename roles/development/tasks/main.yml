@@ -174,5 +174,6 @@
     code --install-extension eamodio.gitlens
     code --install-extension formulahendry.auto-close-tag
     code --install-extension wayou.vscode-todo-highlight
+    code --install-extension yahya-gilany.vscode-pomodoro
   become: False
   ignore_errors: True
