@@ -1,4 +1,4 @@
-# ansible-plays-john
+# ansible-plays-jvmbox
 
 Ansible playbook to install personal tools required for my workspace, and setup my development environment.
 
