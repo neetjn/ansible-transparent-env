@@ -1,3 +1,6 @@
+- set_fact:
+    gcc_script: "https://gist.githubusercontent.com/neetjn/7c28db8a7a31766f0e329590e4de213f/raw/973d9712c9323319bb99519bc43b34a2d778daa4/gcc7.sh"
+
 - name: Check if ssh key exists
   stat:
     path: "{{ssh_directory}}/git"
@@ -8,6 +11,14 @@
     ssh-keygen -t rsa -C "{{git_ssh_key_user}}" -f "{{ssh_directory}}/git" -N ''
   become: False
   when: git_ssh_key_exists.stat.exists == False
+  
+- name: Install CMake
+  package:
+    name: cmake
+    state: present
+
+- name: Install gcc 7
+  shell: "curl {{gcc_script}} | sh"
 
 - name: Install Python development libs
   apt:
@@ -183,6 +194,8 @@
     code --install-extesion alefragnani.bookmarks
     code --install-extension dart-code.dart-code
     code --install-extension sbrink.elm
+    code --install-extension twxs.cmake
+    code --install-extension vector-of-bool.cmake-tools
   become: False
   ignore_errors: True
 
