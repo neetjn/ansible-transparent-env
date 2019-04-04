@@ -13,7 +13,7 @@
   when: git_ssh_key_exists.stat.exists == False
   
 - name: Install CMake
-  package:
+  apt:
     name: cmake
     state: present
 
