@@ -26,6 +26,7 @@ The playbook has been broken up into four individual role groups:
 
 #### Development
 
+* Install GCC 7
 * Install python 3.6/3.7.
 * Install pylint.
 * Install httpie.
