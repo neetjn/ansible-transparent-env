@@ -7,17 +7,3 @@
   apt:
     name: oranchelo-icon-theme
     state: present
-
-- name: Setup wallpapers
-  copy:
-    src: "{{ item }}"
-    dest: /usr/share/backgrounds
-  with_fileglob:
-    - roles/aesthetics/files/*
-
-- name: Setup fonts
-  copy:
-    src: "{{ item }}"
-    dest: /usr/local/share/fonts
-  with_fileglob:
-    - roles/aesthetics/fonts/*

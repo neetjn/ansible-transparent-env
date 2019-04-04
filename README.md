@@ -1,37 +1,52 @@
 # ansible-plays-jvmbox
 
-Ansible playbook to install personal tools required for my workspace, and setup my development environment.
+Ansible plays for bootstrapping my development environment @Transparent Language.
 
-This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment), but will work with any 64 bit Ubuntu based distribution using Trusty or Xenial.
+This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment).
 
 The playbook has been broken up into four individual role groups:
 
 #### Common
 
-* Install file-roller (archive manager).
-* Install nano (terminal text editor).
 * Install curl (cli http tool).
-* Install httpie (cli http tool).
+* Install nano (terminal text editor).
 * Install gedit (gui text editor).
-* Install vlc media player (media management).
+* Install bash completion.
 * Install gyazo screen capture.
+* Install libreoffice suite.
+* Install snapd.
+* Install elinks.
+* Install i3 environment (with i3blocks).
+* Install nitrogen.
+* Install tmux.
+* Install zsh shell.
+* Install fileroller archive manager.
+* Install nautilus file explorer.
+* Install jq.
 
 #### Development
 
+* Install python 3.6/3.7.
+* Install pylint.
+* Install httpie.
 * Install aws-cli.
-* install mongodb compass.
-* Install sqlectron.
 * Install docker.
 * Install docker-compose.
-* Install vscode.
-* Install pylint.
 * Install twine (pypi package manager).
 * Install sphinx (docs generator).
-* Install node.js 8 stable (using n tool).
+* Install node.js 10 stable (using n tool).
 * Install coffeescript.
 * Install webpack.
 * Install ruby.
 * Install travis-cli.
+* Install datagrip.
+* Install insomnia rest tool.
+* install mongodb compass.
+* Install vscode.
+* Install vim.
+* Install pathogen for vim.
+* Install apt-vim.
+* Install gvim.
 
 #### Aesthetics
 
@@ -40,36 +55,24 @@ The playbook has been broken up into four individual role groups:
 
 #### Social
 
-* Install skype client.
-* Install hipchat desktop client.
+* Install teamviewer.
 * Install slack desktop client.
 * Install gitter desktop client.
-* Install teamviewer.
 
 ## Variables
 
 Playbook inventory variables can be found in `group_vars/all.yml`.
 
-    git_ssh_key_user: Label of ssh key generated for git.
-
 ## Use
 
 ```sh
-git clone https://github.com/neetjn/ansible-plays-john.git
+git clone https://github.com/neetjn/ansible-plays-jvmbox.git
 
-cd ansible-plays-john
+cd ansible-plays-jvmbox
 
 ansible-playbook playbook.yml
 ```
 
-## Contributing
-
-Contributing guidelines are as follows,
-
-* Any new bugs or features must have a parent task/issue associated them them.
-    * Branches for bugs and features should be structured like so, `issue-x-username`.
-* Before putting in a pull request, try running each role on in clean environment.
-* Be sure to include your respective changes in the related role description.
-
 ---
-Copyright (c) 2017 John Nolette Licensed under the MIT license.
+
+Copyright (c) 2019 John Nolette Licensed under the MIT license.

@@ -1,6 +1,16 @@
+- name: Install curl cli
+  apt:
+    name: curl
+    state: present
+
 - name: Install build essentials for ubuntu
   apt:
     name: build-essential
+    state: present
+
+- name: Install software properties common
+  apt:
+    name: software-properties-common
     state: present
 
 - name: Intall nano terminal editor
@@ -11,41 +21,6 @@
 - name: Install gedit text editor
   apt:
     name: gedit
-    state: present
-
-- name: Intall file-roller archive manager
-  apt:
-    name: file-roller
-    state: present
-    
-- name: Install vlc media player
-  apt:
-    name: vlc
-    state: present
-    
-- name: Install vlc browser plugin
-  apt:
-    name: browser-plugin-vlc
-    state: present
-
-- name: Install redshift with gui for blue light management
-  apt:
-    name: redshift-gtk
-    state: present
-
-- name: Install plank for app dock
-  apt:
-    name: plank
-    state: present
-
-- name: Install curl cli
-  apt:
-    name: curl
-    state: present
-
-- name: Install pip python package manager
-  apt:
-    name: python-pip
     state: present
 
 - name: Install bash completion
@@ -62,6 +37,94 @@
 # https://github.com/gyazo/Gyazo-for-Linux
 - name: Install Gyazo
   shell: |
-    curl -s https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh | sudo bash
+    curl -s https://packagecloud.io/install/repositories/gyazo/gyazo-for-linux/script.deb.sh | sudo os=ubuntu dist=xenial bash
     apt-get install gyazo -y
   when: gyazo_check.rc == 1
+
+- name: Install snapd
+  apt:
+    name: snapd
+    state: present
+
+- name: Install Libreoffice
+  shell: snap install libreoffice
+
+- name: Install elinks
+  apt:
+    name: elinks
+    state: present
+
+- name: Install i3
+  apt:
+    name: i3
+    state: present
+
+- name: Install i3blocks
+  apt:
+    name: i3blocks
+    state: present
+
+- name: Install nitogren
+  apt:
+    name: nitrogen
+    state: present
+
+- name: Install audio control for i3 - pavu
+  apt:
+    name: pavucontrol
+    state: present
+    
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
+
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+
+- name: Disable chsh authentication
+  lineinfile:
+    dest: /etc/pam.d/chsh
+    regexp: '.*pam_shells\.so'
+    line: 'auth sufficient  pam_shells.so'
+
+- name: Install oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  become: False
+
+- name: Re-enable chsh authentication
+  lineinfile:
+    dest: /etc/pam.d/chsh
+    regexp: '.*pam_shells\.so'
+    line: 'auth required  pam_shells.so'
+
+- name: Clone dotfiles
+  git:
+    repo: https://github.com/neetjn/dotfiles.git
+    dest: /tmp/dotfiles
+    version: master
+
+- name: Copy dotfiles
+  shell: |
+    chown -R "{{host_username}}" /tmp/dotfiles/
+    cp -r /tmp/dotfiles/* "{{home_directory}}"
+    cp -r /tmp/dotfiles/.* "{{home_directory}}"
+    rm -rf "{{home_directory}}/.git"
+  ignore_errors: yes
+
+- name: Install nautilus file manager
+  apt:
+    name: nautilus
+    state: present
+    
+- name: Install fileroller archive manager
+  apt:
+    name: file-roller
+    state: present
+
+- name: Install jq
+  apt:
+    name: jq
+state: present
