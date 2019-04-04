@@ -51,7 +51,7 @@ The playbook has been broken up into four individual role groups:
 #### Aesthetics
 
 * Install Oranchelo icon theme.
-* Copy wallpaper to user backgrounds directory.
+* Install numix gtk theme.
 
 #### Social
 
