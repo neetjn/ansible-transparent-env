@@ -135,54 +135,12 @@
 
 # will install the latest version of vscode
 - name: Install Code
-  shell: snap install vscode --classic
+  shell: snap install code --classic
   when: code_check.rc == 1
 
-# will install vscode extensions
+# assumes script exists - see common tasks for cloning dotfiles
 - name: Install Code Extensions
-  shell: |
-    code --install-extension ms-python.python
-    code --install-extension redhat.java
-    code --install-extension EditorConfig.EditorConfig
-    code --install-extension abusaidm.html-snippets
-    code --install-extension arcticicestudio.nord-visual-studio-code
-    code --install-extension christian-kohler.npm-intellisense
-    code --install-extension christian-kohler.path-intellisense
-    code --install-extension crisward.riot-tag
-    code --install-extension dbaeumer.vscode-eslint
-    code --install-extension dzannotti.vscode-babel-coloring
-    code --install-extension eg2.vscode-npm-script
-    code --install-extension PKief.material-icon-theme
-    code --install-extension formulahendry.terminal
-    code --install-extension hnw.vscode-auto-open-markdown-preview
-    code --install-extension jasonnutter.search-node-modules
-    code --install-extension liuji-jim.vue
-    code --install-extension marcostazi.VS-code-vagrantfile
-    code --install-extension octref.vetur
-    code --install-extension waderyan.nodejs-extension-pack
-    code --install-extension xabikos.JavaScriptSnippets
-    code --install-extension zhuangtongfa.Material-theme
-    code --install-extension dracula-theme.theme-dracula
-    code --install-extension Equinusocio.vsc-material-theme
-    code --install-extension alireza94.theme-gotham
-    code --install-extension raashida.fixthecode-vs
-    code --install-extension lextudio.restructuredtext
-    code --install-extension loiane.ts-extension-pack
-    code --install-extension eamodio.gitlens
-    code --install-extension formulahendry.auto-close-tag
-    code --install-extension wayou.vscode-todo-highlight
-    code --install-extension yahya-gilany.vscode-pomodoro
-    code --install-extensions primalmotion.primal
-    code --install-extension ulthes.theme-firewatch
-    code --install-extension monokai.theme-monokai-pro-vscode
-    code --install-extension teabyii.ayu
-    code --install-extension nonylene.dark-molokai-theme
-    code --install-extension ms-vscode.theme-1337
-    code --install-extension ryu1kn.text-marker
-    code --install-extension webreflection.literally-html
-    code --install-extesion alefragnani.bookmarks
-    code --install-extension dart-code.dart-code
-    code --install-extension sbrink.elm
+  shell: sh "{{home_directory}}"/.tools/install-code-extensions.sh
   become: False
   ignore_errors: True
 
@@ -210,23 +168,10 @@
     cat "{{home_directory}}/.zshrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.zshrc"
   become: False
 
+# assumes script exists - see common tasks for cloning dotfiles
 - name: Install vim plugins
   shell: |
-    alias apt-vim="{{home_directory}}/apt-vim/apt-vim"
-    apt-vim install -y https://github.com/scrooloose/nerdtree.git
-    apt-vim install -y https://github.com/vim-python/python-syntax.git
-    apt-vim install -y https://github.com/nvie/vim-flake8.git
-    apt-vim install -y https://github.com/Valloric/YouCompleteMe.git
-    apt-vim install -y https://github.com/ryym/vim-riot.git
-    apt-vim install -y https://github.com/leafgarland/typescript-vim.git
-    apt-vim install -y https://github.com/kchmck/vim-coffee-script.git
-    apt-vim install -y https://github.com/mxw/vim-jsx.git
-    apt-vim install -y https://github.com/pangloss/vim-javascript.git
-    apt-vim install -y https://github.com/posva/vim-vue.git
-    apt-vim install -y https://github.com/itchyny/vim-gitbranch.git
-    apt-vim install -y https://github.com/tpope/vim-fugitive.git
-    apt-vim install -y https://github.com/ctrlpvim/ctrlp.vim.git
-    apt-vim install -y https://github.com/sgur/vim-editorconfig.git
+    apt-vim="{{home_directory}}/apt-vim/apt-vim" sh "{{home_directory}}"/.tools/install-apt-vim-extensions.sh
   become: False
 
 - name: Install editorconfig core
