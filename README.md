@@ -61,16 +61,6 @@ The playbook has been broken up into four individual role groups:
 * Install slack desktop client.
 * Install gitter desktop client.
 
-## Use
-
-```sh
-git clone https://github.com/neetjn/ansible-plays-jvmbox.git
-
-cd ansible-plays-jvmbox
-
-ansible-playbook playbook.yml
-```
-
 ---
 
 Copyright (c) 2019 John Nolette Licensed under the MIT license.
