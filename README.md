@@ -61,10 +61,6 @@ The playbook has been broken up into four individual role groups:
 * Install slack desktop client.
 * Install gitter desktop client.
 
-## Variables
-
-Playbook inventory variables can be found in `group_vars/all.yml`.
-
 ## Use
 
 ```sh
