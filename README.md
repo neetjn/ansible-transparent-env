@@ -24,6 +24,7 @@ The playbook has been broken up into four individual role groups:
 * Install nautilus file explorer.
 * Install jq.
 * Install Gimp.
+* Install ffsend.
 
 #### Development
 

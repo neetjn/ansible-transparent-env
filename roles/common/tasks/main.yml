@@ -161,3 +161,14 @@
   apt:
     name: gimp
     state: present
+
+# check if ffsend installed
+- name: Check ffsend Installed
+  shell: which ffsend
+  register: ffsend_check
+  ignore_errors: True
+
+# will install the latest version of ffsend
+- name: Install Code
+  shell: snap install ffsend
+  when: ffsend_check.rc == 1
