@@ -1,6 +1,6 @@
-# ansible-plays-jvmbox
+# ansible-transparent-env
 
-Ansible plays for bootstrapping my development environment @Transparent Language.
+Ansible plays for bootstrapping my development environment for @Transparent Language.
 
 This project is a sub-project of the [JVM Development Environment](https://github.com/neetVeritas/jvm-development-environment).
 
