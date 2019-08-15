@@ -1,6 +1,3 @@
-- set_fact:
-    gcc_script: "https://gist.githubusercontent.com/neetjn/7c28db8a7a31766f0e329590e4de213f/raw/973d9712c9323319bb99519bc43b34a2d778daa4/gcc7.sh"
-
 - name: Check if ssh key exists
   stat:
     path: "{{ssh_directory}}/git"
@@ -12,14 +9,6 @@
   become: False
   when: git_ssh_key_exists.stat.exists == False
   
-- name: Install CMake
-  apt:
-    name: cmake
-    state: present
-
-- name: Install gcc 7
-  shell: "curl {{gcc_script}} | sh"
-
 - name: Install Python development libs
   apt:
     name: python-dev
@@ -73,16 +62,6 @@
     version: 1.9.0
     state: present
 
-- name: Install Twine
-  pip:
-    name: twine
-    state: present
-
-- name: Install Sphinx
-  pip:
-    name: sphinx
-    state: present
-
 - name: Install n node.js version manager
   npm:
     name: n
@@ -102,21 +81,6 @@
   npm:
     name: webpack
     global: yes
-    state: present
-
-- name: Install ruby
-  apt:
-    name: ruby
-    state: present
-
-- name: Install ruby development tools
-  apt:
-    name: ruby-dev
-    state: present
-
-- name: Install travis-cli
-  gem:
-    name: travis-cli
     state: present
 
 - name: Install datagrip
@@ -155,42 +119,7 @@
   become: False
   ignore_errors: True
 
-- name: Add vim8 ppa
-  apt_repository:
-    validate_certs: no
-    repo: ppa:jonathonf/vim
-    state: present
-
-- name: Install vim
+- name: Install Apache Ant
   apt:
-    name: vim
-    state: present
-
-- name: Install pathogen for vim
-  shell: |
-    mkdir -p ~/.vim/autoload ~/.vim/bundle
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-- name: Install apt-vim
-  shell: |
-    curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
-    chmod +x "{{home_directory}}/apt-vim/apt-vim"
-    cat "{{home_directory}}/.bashrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.bashrc"
-    cat "{{home_directory}}/.zshrc" | grep apt-vim || echo "alias apt-vim='{{home_directory}}/apt-vim/apt-vim' >> {{home_directory}}/.zshrc"
-  become: False
-
-# assumes script exists - see common tasks for cloning dotfiles
-- name: Install vim plugins
-  shell: |
-    apt-vim="{{home_directory}}/apt-vim/apt-vim" sh "{{home_directory}}"/.tools/install-apt-vim-extensions.sh
-  become: False
-
-- name: Install editorconfig core
-  apt:
-    name: editorconfig
-    state: present
-
-- name: Install gvim
-  apt:
-    name: vim-gnome
+    name: ant
     state: present

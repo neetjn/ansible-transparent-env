@@ -64,6 +64,34 @@
     name: i3blocks
     state: present
 
+- name: Install prerequisites for i3 blocks
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - libxcb1-dev
+    - libxcb-keysyms1-dev
+    - libpango1.0-dev
+    - libxcb-util0-dev
+    - libxcb-icccm4-dev
+    - libyajl-dev
+    - libstartup-notification0-dev
+    - libxcb-randr0-dev
+    - libev-dev
+    - libxcb-cursor-dev
+    - libxcb-xinerama0-dev
+    - libxcb-xkb-dev
+    - libxkbcommon-dev
+    - libxkbcommon-x11-dev
+    - xutils-dev
+    - libxcb-shape0-dev autoconf
+
+- name: Install xcb-utils
+  shell: curl -s https://gist.githubusercontent.com/neetjn/1452f0ca91886d935baaa405fb8dd15f/raw/513ccda3740c789edaf80f0c5875e2d4386cc7f9/install-xcb-util.sh | bash
+
+- name: Install i3-gaps
+  shell: curl -s https://gist.githubusercontent.com/neetjn/e87184f0a3942ae8f8d122b91fae701a/raw/3c898086d873eb78c536634bc94dc3ca4476b2cb/install-i3-gaps.sh | bash
+
 - name: Install nitogren
   apt:
     name: nitrogen
@@ -127,4 +155,9 @@
 - name: Install jq
   apt:
     name: jq
+    state: present
+
+- name: Install Gimp
+  apt:
+    name: gimp
     state: present

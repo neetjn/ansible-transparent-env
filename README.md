@@ -23,32 +23,24 @@ The playbook has been broken up into four individual role groups:
 * Install fileroller archive manager.
 * Install nautilus file explorer.
 * Install jq.
+* Install Gimp.
 
 #### Development
 
-* Install cmake.
-* Install gcc7.
 * Install python 3.6/3.7.
 * Install pylint.
 * Install httpie.
 * Install aws-cli.
 * Install docker.
 * Install docker-compose.
-* Install twine (pypi package manager).
-* Install sphinx (docs generator).
 * Install node.js 10 stable (using n tool).
 * Install coffeescript.
 * Install webpack.
-* Install ruby.
-* Install travis-cli.
 * Install datagrip.
 * Install insomnia rest tool.
 * install mongodb compass.
 * Install vscode.
-* Install vim.
-* Install pathogen for vim.
-* Install apt-vim.
-* Install gvim.
+* Install apache ant.
 
 #### Aesthetics
 
@@ -58,8 +50,6 @@ The playbook has been broken up into four individual role groups:
 #### Social
 
 * Install teamviewer.
-* Install slack desktop client.
-* Install gitter desktop client.
 
 ---
 
