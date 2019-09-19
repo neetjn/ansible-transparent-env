@@ -50,7 +50,8 @@ The playbook has been broken up into four individual role groups:
 
 #### Social
 
-* Install teamviewer.
+* Install TeamvViewer.
+* Install Microsoft Teams.
 
 ---
 
