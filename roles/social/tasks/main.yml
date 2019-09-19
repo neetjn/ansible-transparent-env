@@ -9,3 +9,6 @@
     dpkg --install tv.deb
     rm -rf tv.deb
   when: teamviewer_check.rc == 1
+
+- name: Install Teams
+  shell: snap install teams-for-linux
